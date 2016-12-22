@@ -46,6 +46,7 @@ import org.rstudio.studio.client.common.debugging.model.ErrorHandlerType;
 import org.rstudio.studio.client.common.debugging.model.UnhandledError;
 import org.rstudio.studio.client.common.dependencies.events.InstallShinyEvent;
 import org.rstudio.studio.client.common.rpubs.events.RPubsUploadStatusEvent;
+import org.rstudio.studio.client.common.rstudioapi.events.RStudioAPIShowDialogEvent;
 import org.rstudio.studio.client.common.sourcemarkers.SourceMarker;
 import org.rstudio.studio.client.common.synctex.events.SynctexEditFileEvent;
 import org.rstudio.studio.client.common.synctex.model.SourceLocation;
@@ -863,6 +864,11 @@ public class ClientEventDispatcher
          {
             TerminalBusyEvent.Data data = event.getData();
             eventBus_.fireEvent(new TerminalBusyEvent(data));
+         }
+         else if (type.equals(ClientEvent.RStudioAPIShowDialog))
+         {
+            RStudioAPIShowDialogEvent.Data data = event.getData();
+            eventBus_.fireEvent(new RStudioAPIShowDialogEvent(data));
          }
          else
          {

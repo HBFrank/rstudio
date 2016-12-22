@@ -155,6 +155,7 @@ class ClientEvent extends JavaScriptObject
    public static final String NavigateShinyFrame = "navigate_shiny_frame";
    public static final String UpdateNewConnectionDialog = "update_new_connection_dialog";
    public static final String TerminalBusy = "terminal_busy";
+   public static final String RStudioAPIShowDialog = "rstudioapi_show_dialog";
 
    protected ClientEvent()
    {
